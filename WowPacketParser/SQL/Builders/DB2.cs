@@ -23,7 +23,7 @@ namespace WowPacketParser.SQL.Builders
                 broadcastText.Value.Item1.ConvertToDBStruct();
 
             var entries = Storage.BroadcastTexts.Keys();
-            var templatesDb = SQLDatabase.GetDict<uint, BroadcastText>(entries, "Id", Settings.HotfixesDatabase);
+            var templatesDb = SQLDatabase.GetDict<uint, BroadcastText>(entries, "Id");
 
             return SQLUtil.CompareDicts(Storage.BroadcastTexts, templatesDb, StoreNameType.BroadcastText, "ID");
         }
@@ -135,7 +135,7 @@ namespace WowPacketParser.SQL.Builders
                 return string.Empty;
 
             var entries = Storage.GameObjectTemplateDB2s.Keys();
-            var templatesDb = SQLDatabase.GetDict<uint, GameObjectTemplateDB2>(entries, "Id", Settings.HotfixesDatabase);
+            var templatesDb = SQLDatabase.GetDict<uint, GameObjectTemplateDB2>(entries, "Id");
 
             return SQLUtil.CompareDicts(Storage.GameObjectTemplateDB2s, templatesDb, StoreNameType.GameObject);
         }
@@ -150,7 +150,7 @@ namespace WowPacketParser.SQL.Builders
                 return string.Empty;
 
             var entries = Storage.SpellMiscs.Keys();
-            var templatesDb = SQLDatabase.GetDict<uint, SpellMisc>(entries, "Id", Settings.HotfixesDatabase);
+            var templatesDb = SQLDatabase.GetDict<uint, SpellMisc>(entries, "Id");
 
             return SQLUtil.CompareDicts(Storage.SpellMiscs, templatesDb, StoreNameType.Spell);
         }
